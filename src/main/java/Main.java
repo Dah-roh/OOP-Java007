@@ -1,4 +1,7 @@
-public class Main extends Person{
+import Services.ServiceImplementation.TeacherTasksImplementation;
+import model.Person;
+
+public class Main extends Person {
 
     public static void main(String[] args) {
         Person teacher = new Person("Helen", 28, "Academic staff", "single", 50000);

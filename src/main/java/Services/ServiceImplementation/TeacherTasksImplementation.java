@@ -1,4 +1,9 @@
-public class TeacherTasksImplementation  implements TeacherTasks{
+package Services.ServiceImplementation;
+
+import Services.TeacherTasks;
+import model.Person;
+
+public class TeacherTasksImplementation  implements TeacherTasks {
     private Person teacher = new Person();
     public void teach(Person teacher) {
         if (teacher.getLevel()!=null&&teacher.getLevel().equals("Academic staff")){
