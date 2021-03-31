@@ -1,8 +1,11 @@
 package model;
 
-import lombok.Data;
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 
     private String name;
@@ -11,13 +14,6 @@ public class Person {
     private String maritalStatus;
     private double salary;
 
-    public Person(String name, int age, String level, String maritalStatus, double salary) {
-        this.name = name;
-        this.age = age;
-        this.level = level;
-        this.maritalStatus = maritalStatus;
-        this.salary = salary;
-    }
 
     public Person(String name, int age, String maritalStatus) {
         this.name = name;
@@ -25,7 +21,9 @@ public class Person {
         this.maritalStatus = maritalStatus;
     }
 
-    public Person() {
-
+    public void setAge(int age) {
+        if (age>18){
+        this.age = age;
+        }
     }
 }

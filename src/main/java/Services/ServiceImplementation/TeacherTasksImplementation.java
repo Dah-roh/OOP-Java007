@@ -3,15 +3,18 @@ package Services.ServiceImplementation;
 import Services.TeacherTasks;
 import model.Person;
 
+import java.io.FileReader;
+import java.io.IOException;
+
 public class TeacherTasksImplementation  implements TeacherTasks {
     private Person teacher = new Person();
-    public void teach(Person teacher) {
+    public String teach(Person teacher) throws RuntimeException{
         if (teacher.getLevel()!=null&&teacher.getLevel().equals("Academic staff")){
-            System.out.println("teach students!!");
+            return "teach students!!";
         }
-        else if(teacher.getLevel()==null||!teacher.getLevel().equals("Academic staff")){
-            System.out.println("get your sorry asses to the staff room");
+        else if(teacher.getLevel()==null){
+            throw new NullPointerException("There is no level set for student");
         }
-
+        return "You can't teach this class!!";
     }
 }
